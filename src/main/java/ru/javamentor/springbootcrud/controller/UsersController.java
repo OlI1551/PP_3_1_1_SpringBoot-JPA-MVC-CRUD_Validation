@@ -30,7 +30,7 @@ public class UsersController {
     }
 
     @GetMapping("/new")
-    public String getNewUser(@ModelAttribute("user") User user) {        ;
+    public String getNewUser(@ModelAttribute("user") User user) {
         return "userToCreateDetailsForm";
     }
 
@@ -115,7 +115,7 @@ public class UsersController {
 
     @PostMapping("/deleteUser")
     public String deleteUser(@RequestParam("userId") Long userId, Model model) {
-        String view = null;
+        String view;
         if (userId != null) {
             User user = userService.getUserById(userId);
             if (user != null) {
